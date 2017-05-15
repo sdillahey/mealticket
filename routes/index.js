@@ -1,9 +1,12 @@
 var express = require('express');
 var router = express.Router();
 
+const mealController = require('../controllers/mealController');
+
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
-});
+router.get('/', mealController.main);
+router.get('/venues', mealController.allVenues);
+router.get('/:venue', mealController.index);
+
 
 module.exports = router;
