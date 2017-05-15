@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/mealticket');
+mongoose.connect(process.env.DB_HOST);
 
 mongoose.Promise = Promise;
 
