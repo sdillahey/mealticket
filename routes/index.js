@@ -7,7 +7,7 @@ const mealController = require('../controllers/mealController');
 const venueController = require('../controllers/venueController');
 
 /* GET home page. */
-router.get('/', mealController.main);
+router.get('/', venueController.main);
 router.get('/auth/google', passport.authenticate(
   'google',
   { scope: ['profile', 'email']}
