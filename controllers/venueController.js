@@ -1,5 +1,13 @@
 const Venue = require('../models/venue')
 
+function main(req, res, next){
+  Venue.find({}, function(err, venues){
+    if (err) return res.redirect('/');
+    console.log(venues);
+    res.render('main', { user: req.user, venues: venues });
+  })
+}
+
 function allVenues(req, res, next){
   Venue.find({}, function(err, venues){
     if (err) return res.redirect('/');
@@ -29,6 +37,7 @@ function destroy(req, res, next){
 }
 
 const venueController = {
+  main: main,
   allVenues: allVenues,
   edit: edit,
   update: update,
