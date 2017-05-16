@@ -13,3 +13,7 @@ a {
 .card-title {
   margin-left: 10px;
 }
+
+.brand-logo {
+  clip: auto;
+}
