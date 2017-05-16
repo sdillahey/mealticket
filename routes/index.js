@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const passport = require('passport');
+const request = require('request');
 
 const mealController = require('../controllers/mealController');
 const venueController = require('../controllers/venueController');
@@ -13,7 +14,7 @@ router.get('/auth/google', passport.authenticate(
 ));
 router.get('/logout', function(req, res) {
   req.logout();
-  res.redirect('/venues');
+  res.redirect('/');
 });
 router.get('/venues', venueController.allVenues);
 router.get('/venues/:venue/edit', venueController.edit);
