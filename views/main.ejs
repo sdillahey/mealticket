@@ -5,6 +5,7 @@
   <title>Meal Ticket</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel='stylesheet' href='/stylesheets/style.css' />
 </head>
 <body>
@@ -26,33 +27,31 @@
       </ul>
     </div>
   </nav>
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Item Name</th>
-        <th>Item Price</th>
-      </tr>
-    </thead>
-
-    <tbody>
-      <tr>
-        <td>Alvin</td>
-        <td>Eclair</td>
-        <td>$0.87</td>
-      </tr>
-      <tr>
-        <td>Alan</td>
-        <td>Jellybean</td>
-        <td>$3.76</td>
-      </tr>
-      <tr>
-        <td>Jonathan</td>
-        <td>Lollipop</td>
-        <td>$7.00</td>
-      </tr>
-    </tbody>
-  </table>
-  <h1>Meal Ticket</h1>
+  <div class="row">
+    <table class="col s6">
+      <thead>
+        <tr>
+          <h4>Events</h4>
+        </tr>
+      </thead>
+      <tbody>
+        <li class="col s6">
+          <div class="card">
+            <div class="card-image waves-effect waves-block waves-light">
+              <img class="activator" src="images/office.jpg">
+            </div>
+            <div class="card-content">
+              <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i></span>
+              <p><a href="#">This is a link</a></p>
+            </div>
+            <div class="card-reveal">
+              <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+              <p>Here is some more information about this product that is only revealed once clicked on.</p>
+            </div>
+          </div>
+        </li>
+      </tbody>
+    </table>
+  </div>
 </body>
 </html>
