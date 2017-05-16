@@ -4,10 +4,14 @@
   <meta charset="UTF-8">
   <title>Meal Ticket</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
   <link rel='stylesheet' href='/stylesheets/style.css' />
+  <script
+    src="https://code.jquery.com/jquery-3.2.1.min.js"
+    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
 </head>
 <body class="main">
   <div id="topbanner" class="row">
@@ -18,19 +22,19 @@
   <nav>
     <div class="nav-wrapper red darken-3">
       <a href="/" class="brand-logo center"><img width="150" src="http://i.imgur.com/La2pjx5.png" alt="Meal Ticket"></a>
-      <ul class="left hide-on-med-and-down">
-        <li><a href="#">placeholder</a></li>
-        <li><a href="#">placeholder</a></li>
+      <ul class="left hide-on-med-and-down off-set">
+        <li><a href="#">Reviews</a></li>
+        <li><a href="/venues">Venues</a></li>
       </ul>
       <ul class="right hide-on-med-and-down">
-        <li><a href="#">placeholder</a></li>
-        <li><a href="#">placeholder</a></li>
+        <li><a href="#">Search</a></li>
+        <li><a href="#">Close By</a></li>
       </ul>
     </div>
   </nav>
   &nbsp;
- <h4 class="card-title red-text text-darken-3">Events</h4>
   <div class="row">
+   <h4 class="card-title"><u>What's New</u></h4>
     <table class="col s6">
         <ul class="col s7">
           <li>
@@ -79,3 +83,5 @@
   </div>
 </body>
 </html>
+<script src="/javascripts/app.js"></script>
+

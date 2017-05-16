@@ -9,3 +9,7 @@ a {
 .main {
   font-family: 'Quicksand', sans-serif;
 }
+
+.card-title {
+  margin-left: 10px;
+}
