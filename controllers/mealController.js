@@ -1,10 +1,13 @@
 const Restaurant = require('../models/restaurant');
+const Venue = require('../models/venue');
 
 // this function will need to also pass in venue and include our search functionality
 function index(req, res, next){
-  Restaurant.find({}, function(err, restaurants){
-    if (err) return res.redirect('/');
-    res.render('index', {restaurants: restaurants, user: req.user});
+  Venue.findById(req.params.venue, function(err, venue){
+    Restaurant.find({}, function(err, restaurants){
+      if (err) return res.redirect('/');
+      res.render('index', {restaurants: restaurants, user: req.user, venue: venue});
+    });
   });
 }
 
