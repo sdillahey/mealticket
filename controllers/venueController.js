@@ -1,17 +1,17 @@
-// const Venue = require('../models/venue')
+const Venue = require('../models/venue')
 
 function allVenues(req, res, next){
-  // Venue.find({}, function(err, venues){
-  //   if (err) return res.redirect('/');
-    res.render('venues');
-  // });
+  Venue.find({}, function(err, venues){
+    if (err) return res.redirect('/');
+    res.render('venues', {venues});
+  });
 }
 
 function edit(req, res, next){
-  // Venue.findById(req.params.venue, function(err, venue){
-  //   if (err) return res.redirect('venues');
-    res.render('edit'); //must pass in venue data
-  // });
+  Venue.findById(req.params.venue, function(err, venue){
+    if (err) return res.redirect('venues');
+    res.render('edit', {venue});
+  });
 }
 
 function update(req, res, next){
