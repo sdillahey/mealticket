@@ -9,6 +9,17 @@
 </head>
 <body>
   <%- include ./partials/_nav  %>
-  <h1>This is a Restaurant nearby Exchange</h1>
+  <div class="row">
+    <div class="col s12 m8">
+      <div class="card">
+        <h1><%= restaurant.name %></h1>
+        <div class="chip">Average Cost: $<%=restaurant.avecost%></div>
+        <div class="chip"><%= restaurant.cuisine%></div>
+        <div><p>Show Page for Restaurant</p></div>
+        <!-- need to update link -->
+        <a href="/venue">Back To List</a>
+      </div>
+    </div>
+  </div>
 </body>
 </html>

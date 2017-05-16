@@ -14,10 +14,10 @@ function index(req, res, next){
 }
 
 function show(req, res, next){
-  // Restaurant.findById(req.params.id, function(err, restaurant){
-  //   if (err) return res.redirect('/<%=req.params.venue%>')
-    res.render('show'); //must pass in restaurant data
-  // });
+  Restaurant.findById(req.params.id, function(err, restaurant){
+    if (err) return res.redirect('/<%=req.params.venue%>')
+    res.render('show', { restaurant });
+  });
 }
 
 function create(req, res, next){
