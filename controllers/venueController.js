@@ -15,15 +15,14 @@ function edit(req, res, next){
 }
 
 function update(req, res, next){
+  console.log("IMMMMM BEEINNNGG CONSOLE LOGGGGEDDDD!!!!!!!", req.body)
   Venue.findByIdAndUpdate(req.params.venue, req.body, function(err, venue){
     if (err) return res.render('/venues/<%=req.params.venue%>/edit');
-    res.redirect('venues');
+    res.redirect('/venues');
   });
 }
 
-
 function destroy(req, res, next){
-  console.log(req.params.venue);
   Venue.findByIdAndRemove(req.params.venue, function(err){
     if (err) return res.redirect('/venues');
     res.redirect('/venues');
