@@ -1,15 +1,10 @@
 const Restaurant = require('../models/restaurant');
 
-
-function main(req, res, next){
-  res.render('main', { user: req.user });
-}
-
 // this function will need to also pass in venue and include our search functionality
 function index(req, res, next){
   Restaurant.find({}, function(err, restaurants){
     if (err) return res.redirect('/');
-    res.render('index', {restaurants});
+    res.render('index', {restaurants: restaurants, user: req.user});
   });
 }
 
@@ -29,7 +24,6 @@ function create(req, res, next){
 }
 
 const mealController = {
-  main: main,
   index: index,
   show: show,
   create: create
