@@ -4,11 +4,25 @@
   <meta charset="UTF-8">
   <title>Meal Ticket</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
   <link rel='stylesheet' href='/stylesheets/style.css' />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
 </head>
 <body>
   <%- include ./partials/_nav  %>
   <h1>All Venues</h1>
+  <table class="striped responsive-table">
+  <% venues.forEach(function(venue){ %>
+    <tr>
+      <td><%= venue.name %></td>
+      <td><%= venue.address %></td>
+      <td><%= venue.url %></td>
+      <td>
+        <form action="/venues/<%= venue._id%>/edit">
+          <button class="waves-effect waves-light btn">Edit</button>
+        </form>
+      </td>
+    </tr>
+   <% }) %>
+  </table>
 </body>
 </html>
