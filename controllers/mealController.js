@@ -4,7 +4,7 @@ const Restaurant = require('../models/restaurant');
 function index(req, res, next){
   Restaurant.find({}, function(err, restaurants){
     if (err) return res.redirect('/');
-    res.render('index', {restaurants});
+    res.render('index', {restaurants: restaurants, user: req.user});
   });
 }
 
