@@ -3,7 +3,7 @@ const Venue = require('../models/venue')
 function allVenues(req, res, next){
   Venue.find({}, function(err, venues){
     if (err) return res.redirect('/');
-    res.render('venues', {venues});
+    res.render('venues', {venues: venues, user: req.user});
   });
 }
 

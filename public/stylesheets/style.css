@@ -1,13 +1,9 @@
 body {
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 0.875em, 'Quicksand', Helvetica, Arial, sans-serif;
 }
 
 a {
   color: #00B7FF;
-}
-
-.main {
-  font-family: 'Quicksand', sans-serif;
 }
 
 .card-title {
