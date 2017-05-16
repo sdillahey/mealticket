@@ -23,7 +23,9 @@ function update(req, res, next){
 
 
 function destroy(req, res, next){
+  console.log(req.params.venue);
   Venue.findByIdAndRemove(req.params.venue, function(err){
+    if (err) return res.redirect('/venues');
     res.redirect('/venues');
   });
 }
