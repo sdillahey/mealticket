@@ -11,7 +11,7 @@ var ratingSchema = new Schema({
 
 var restaurantSchema = new Schema({
   name: String,
-  rating: [ratingSchema]
+  rating: [ratingSchema],
   url: String,
   img_url: String,
   longitude: Number,
