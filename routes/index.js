@@ -1,11 +1,20 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
+const passport = require('passport');
 
 const mealController = require('../controllers/mealController');
 const venueController = require('../controllers/venueController');
 
 /* GET home page. */
 router.get('/', mealController.main);
+router.get('/auth/google', passport.authenticate(
+  'google',
+  { scope: ['profile', 'email']}
+));
+router.get('/logout', function(req, res) {
+  req.logout();
+  res.redirect('/venues');
+});
 router.get('/venues', venueController.allVenues);
 router.get('/venues/:venue/edit', venueController.edit);
 router.put('/venues/:venue', venueController.update);
