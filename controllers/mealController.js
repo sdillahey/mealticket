@@ -2,7 +2,7 @@ const Restaurant = require('../models/restaurant');
 
 
 function main(req, res, next){
-  res.render('main');
+  res.render('main', { user: req.user });
 }
 
 // this function will need to also pass in venue and include our search functionality
