@@ -1,5 +1,5 @@
 <%- include ./partials/_head %>
-  <%- include ./partials/_nav  %>
+<%- include ./partials/_nav  %>
   <div class="row">
     <div class="col s12 m8">
       <div class="card">
@@ -11,6 +11,63 @@
         <a href="/venue">Back To List</a>
       </div>
     </div>
+  </div>
+  <div class="burgerRating">
+    <form action="/rating" method="POST">
+      <div class="burgers">
+        <h5>Walkability</h5>
+        <input name="walk" type="radio" value="1" id="walk1"/>
+        <label for="walk1"></label>
+        <input name="walk" type="radio" value="2" id="walk2"/>
+        <label for="walk2"></label>
+        <input name="walk" type="radio" value="3" id="walk3"/>
+        <label for="walk3"></label>
+        <input name="walk" type="radio" value="4" id="walk4"/>
+        <label for="walk4"></label>
+        <input name="walk" type="radio" value="5" id="walk5"/>
+        <label for="walk5"></label>
+      </div>
+      <div class="burgers">
+        <h5>$$$</h5>
+        <input name="price" type="radio" value="1" id="price1"/>
+        <label for="price1"></label>
+        <input name="price" type="radio" value="2" id="price2"/>
+        <label for="price2"></label>
+        <input name="price" type="radio" value="3" id="price3"/>
+        <label for="price3"></label>
+        <input name="price" type="radio" value="4" id="price4"/>
+        <label for="price4"></label>
+        <input name="price" type="radio" value="5" id="price5"/>
+        <label for="price5"></label>
+      </div>
+      <div class="burgers">
+        <h5>Speed</h5>
+        <input name="speed" type="radio" value="1" id="speed1"/>
+        <label for="speed1"></label>
+        <input name="speed" type="radio" value="2" id="speed2"/>
+        <label for="speed2"></label>
+        <input name="speed" type="radio" value="3" id="speed3"/>
+        <label for="speed3"></label>
+        <input name="speed" type="radio" value="4" id="speed4"/>
+        <label for="speed4"></label>
+        <input name="speed" type="radio" value="5" id="speed5"/>
+        <label for="speed5"></label>
+      </div>
+      <div class="burgers">
+        <h5>Fancy Shmancy</h5>
+        <input name="dress" type="radio" value="1" id="dress1"/>
+        <label for="dress1"></label>
+        <input name="dress" type="radio" value="2" id="dress2"/>
+        <label for="dress2"></label>
+        <input name="dress" type="radio" value="3" id="dress3"/>
+        <label for="dress3"></label>
+        <input name="dress" type="radio" value="4" id="dress4"/>
+        <label for="dress4"></label>
+        <input name="dress" type="radio" value="5" id="dress5"/>
+        <label for="dress5"></label>
+      </div>
+      <input class="btn waves-effect waves-light" type="submit" value="Submit">
+    </form>
   </div>
 </body>
 </html>
