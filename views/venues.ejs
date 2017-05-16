@@ -17,8 +17,13 @@
       <td><%= venue.address %></td>
       <td><%= venue.url %></td>
       <td>
-        <form action="/venues/<%= venue._id%>/edit">
+        <form action="/venues/<%= venue._id%>/edit" method="GET">
           <button class="waves-effect waves-light btn">Edit</button>
+        </form>
+      </td>
+      <td>
+        <form action="/venues/<%= venue._id%>?_method=DELETE" method="POST">
+          <button class="waves-effect waves-light btn">Delete</button>
         </form>
       </td>
     </tr>
