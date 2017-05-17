@@ -6,9 +6,9 @@
         <h1><%= restaurant.name %></h1>
         <div class="chip">Average Cost: $<%=restaurant.avecost%></div>
         <div class="chip"><%= restaurant.cuisine%></div>
-        <div><p>Show Page for Restaurant</p></div>
-        <!-- need to update link -->
-        <a href="/venue">Back To List</a>
+        <div class="row">
+          <a href="/<%=venue._id%>">Back To <%= venue.name %> List</a>
+        </div>
       </div>
     </div>
   </div>
