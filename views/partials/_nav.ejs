@@ -9,14 +9,14 @@
     <div class="nav-wrapper white">
       <a href="/" class="brand-logo"><img width="90" src="http://i.imgur.com/La2pjx5.png" alt="Meal Ticket"></a>
       <ul class="right hide-on-med-and-down">
-        <li><a href="/"><i class="material-icons right red-text text-darken-3">store</i></a></li>
-        <li><a href="#"><i class="material-icons right red-text text-darken-3">search</i></a></li>
         <% if (user) { %>
           <li><a href="/logout" class="red-text text-darken-3"><i class="material-icons left red-text text-darken-3">trending_flat</i>Logout</a></li>
         <% } else { %>
           <li><a href="/auth/google" class="red-text text-darken-3"><i class="material-icons left red-text text-darken-3">vpn_key</i>Login</a></li>
         <% } %>
-        <li><a class="dropdown-button" href="#!" data-activates="dropdown1"><i class="material-icons right red-text text-darken-3">view_headline</i></a></li>
+        <li><a href="/"><i class="material-icons right red-text text-darken-3">store</i></a></li>
+        <li><a href="#"><i class="material-icons right red-text text-darken-3">search</i></a></li>
+        <li><a class="dropdown-button" href="#!" data-activates="dropdown1"><i class="material-icons right red-text text-darken-3">menu</i></a></li>
       </ul>
     </div>
   </nav>
