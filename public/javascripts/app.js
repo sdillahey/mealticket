@@ -1,7 +1,7 @@
 //dropdowns
 $(document).ready(function(){
 
-  //initializes dropdown as it's being created dynamically
+  //initializes dropdown b/c it's being created dynamically
   $('.dropdown-button').dropdown({
     inDuration: 400,
     outDuration: 300,
