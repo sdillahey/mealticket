@@ -1,24 +1,46 @@
 <%- include ./partials/_head %>
 <%- include ./partials/_nav  %>
     <h1>Nearby <%=venue.name%></h1>
-    <% restaurants.forEach(function(restaurant){ %>
-        <div class="row">
-          <div class="col s12 m4">
-            <a href="/venues/<%=venue._id%>/places/<%=restaurant._id%>">
-              <div class="card">
-                <div class="card-image">
-                  <img src="<%= restaurant.url %>">
+    <div class="row">
+      <div class="col m8 push-m4 s12">
+        <div id="map"></div>
+      </div>
+      <div class="col m4 pull-m8 s12">
+      <% restaurants.forEach(function(restaurant){ %>
+          <div class="row">
+              <a href="/venues/<%=venue._id%>/places/<%=restaurant._id%>">
+                <div class="card">
+                  <div class="card-image">
+                    <img src="<%= restaurant.url %>">
+                  </div>
+                  <div class="black-text card-content">
+                    <h4><%= restaurant.name %></h4>
+                    <div class="chip grey lighten-1">Average Cost: $<%=restaurant.avecost%></div>
+                    <div class="chip grey lighten-1"><%= restaurant.cuisine%></div>
+                    <p><%=restaurant.address%></p>
                 </div>
-                <div class="black-text card-content">
-                  <h4><%= restaurant.name %></h4>
-                  <div class="chip grey lighten-1">Average Cost: $<%=restaurant.avecost%></div>
-                  <div class="chip grey lighten-1"><%= restaurant.cuisine%></div>
-                  <p><%=restaurant.address%></p>
-                </div>
-              </div>
-            </a>
+              </a>
+            </div>
           </div>
+        <% }) %>
         </div>
-      <% }) %>
+      </div>
+      <script>
+        function initMap() {
+          var uluru = {lat: <%=venue.latitude%>, lng: <%= venue.longitude%>};
+          var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 15,
+            center: uluru
+          });
+          var venueMarker = new google.maps.Marker({
+            position: uluru,
+            map: map,
+            icon: 'http://i.imgur.com/t46eNRq.png'
+          });
+        }
+      </script>
+      <script async defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDC_zK-S4IyccNDfWF0Sd_Sh-SMjAY7OWs&callback=initMap">
+      </script>
   </body>
 </html>
