@@ -38,3 +38,11 @@ a {
   background-color: grey;
 }
 
+.input-field {
+  width: 500px;
+}
+
+#topbanner {
+  margin: 10px 0;
+}
+
