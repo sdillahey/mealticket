@@ -31,7 +31,7 @@ function create(req, res, next){
       if (err) return res.redirect(`/venues/${req.params.venue}/places`);
       restaurant.rating.push(newRating);
       restaurant.save(function(err){
-        if (err) return res.render('show', {restaurant})
+        if (err) return res.redirect(`/venues/${req.params.venue}/places/${req.params.id}`);
         res.redirect(`/venues/${req.params.venue}/places/${req.params.id}`);
       });
   });

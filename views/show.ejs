@@ -1,90 +1,92 @@
 <%- include ./partials/_head %>
 <%- include ./partials/_nav  %>
-  <div class="row">
-    <div class="col s12 m8">
-      <div class="card">
-        <h1><%= restaurant.name %></h1>
-        <div class="chip">Average Cost: $<%=restaurant.avecost%></div>
-        <div class="chip"><%= restaurant.cuisine%></div>
+  <div class="container">
+    <div class="row">
+      <div class="col s12 m8">
+        <div class="card">
+          <h1><%= restaurant.name %></h1>
+          <div class="chip">Average Cost: $<%=restaurant.avecost%></div>
+          <div class="chip"><%= restaurant.cuisine%></div>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="row">
-    <div class="col s12 m3 offset-m1">
-      <div class="card">
-        <div class="card-content">
-          <span class="card-title">Add Your Rating</span>
-          <div class="burgerRating">
-            <form action="/venues/<%=venue._id%>/places/<%=restaurant._id%>/rating" method="POST">
-              <div class="burgers">
-                <h6>Walkability</h6>
-                <input name="walk" type="radio" value="1" id="walk1"/>
-                <label for="walk1"></label>
-                <input name="walk" type="radio" value="2" id="walk2"/>
-                <label for="walk2"></label>
-                <input name="walk" type="radio" value="3" id="walk3"/>
-                <label for="walk3"></label>
-                <input name="walk" type="radio" value="4" id="walk4"/>
-                <label for="walk4"></label>
-                <input name="walk" type="radio" value="5" id="walk5"/>
-                <label for="walk5"></label>
-              </div>
-              <div class="burgers">
-                <h6>$$$</h6>
-                <input name="price" type="radio" value="1" id="price1"/>
-                <label for="price1"></label>
-                <input name="price" type="radio" value="2" id="price2"/>
-                <label for="price2"></label>
-                <input name="price" type="radio" value="3" id="price3"/>
-                <label for="price3"></label>
-                <input name="price" type="radio" value="4" id="price4"/>
-                <label for="price4"></label>
-                <input name="price" type="radio" value="5" id="price5"/>
-                <label for="price5"></label>
-              </div>
-              <div class="burgers">
-                <h6>Speed</h6>
-                <input name="speed" type="radio" value="1" id="speed1"/>
-                <label for="speed1"></label>
-                <input name="speed" type="radio" value="2" id="speed2"/>
-                <label for="speed2"></label>
-                <input name="speed" type="radio" value="3" id="speed3"/>
-                <label for="speed3"></label>
-                <input name="speed" type="radio" value="4" id="speed4"/>
-                <label for="speed4"></label>
-                <input name="speed" type="radio" value="5" id="speed5"/>
-                <label for="speed5"></label>
-              </div>
-              <div class="burgers">
-                <h6>Fancy Shmancy</h6>
-                <input name="dress" type="radio" value="1" id="dress1"/>
-                <label for="dress1"></label>
-                <input name="dress" type="radio" value="2" id="dress2"/>
-                <label for="dress2"></label>
-                <input name="dress" type="radio" value="3" id="dress3"/>
-                <label for="dress3"></label>
-                <input name="dress" type="radio" value="4" id="dress4"/>
-                <label for="dress4"></label>
-                <input name="dress" type="radio" value="5" id="dress5"/>
-                <label for="dress5"></label>
-              </div>
-              <div>
-                <h6>Post Game?</h6>
-                <input name="latenight" type="checkbox" id="latenight">
-                <label for="latenight"></label>
-              </div>
-              <input class="btn waves-effect waves-light" type="submit" value="Submit">
-            </form>
+    <div class="row">
+      <div class="col s12 m3 offset-m1">
+        <div class="card">
+          <div class="card-content">
+            <span class="card-title">Add Your Rating</span>
+            <div class="burgerRating">
+              <form action="/venues/<%=venue._id%>/places/<%=restaurant._id%>/rating" method="POST">
+                <div class="burgers">
+                  <h6>Walkability</h6>
+                  <input name="walk" type="radio" value="1" id="walk1"/>
+                  <label for="walk1"></label>
+                  <input name="walk" type="radio" value="2" id="walk2"/>
+                  <label for="walk2"></label>
+                  <input name="walk" type="radio" value="3" id="walk3"/>
+                  <label for="walk3"></label>
+                  <input name="walk" type="radio" value="4" id="walk4"/>
+                  <label for="walk4"></label>
+                  <input name="walk" type="radio" value="5" id="walk5"/>
+                  <label for="walk5"></label>
+                </div>
+                <div class="burgers">
+                  <h6>$$$</h6>
+                  <input name="price" type="radio" value="1" id="price1"/>
+                  <label for="price1"></label>
+                  <input name="price" type="radio" value="2" id="price2"/>
+                  <label for="price2"></label>
+                  <input name="price" type="radio" value="3" id="price3"/>
+                  <label for="price3"></label>
+                  <input name="price" type="radio" value="4" id="price4"/>
+                  <label for="price4"></label>
+                  <input name="price" type="radio" value="5" id="price5"/>
+                  <label for="price5"></label>
+                </div>
+                <div class="burgers">
+                  <h6>Speed</h6>
+                  <input name="speed" type="radio" value="1" id="speed1"/>
+                  <label for="speed1"></label>
+                  <input name="speed" type="radio" value="2" id="speed2"/>
+                  <label for="speed2"></label>
+                  <input name="speed" type="radio" value="3" id="speed3"/>
+                  <label for="speed3"></label>
+                  <input name="speed" type="radio" value="4" id="speed4"/>
+                  <label for="speed4"></label>
+                  <input name="speed" type="radio" value="5" id="speed5"/>
+                  <label for="speed5"></label>
+                </div>
+                <div class="burgers">
+                  <h6>Fancy Shmancy</h6>
+                  <input name="dress" type="radio" value="1" id="dress1"/>
+                  <label for="dress1"></label>
+                  <input name="dress" type="radio" value="2" id="dress2"/>
+                  <label for="dress2"></label>
+                  <input name="dress" type="radio" value="3" id="dress3"/>
+                  <label for="dress3"></label>
+                  <input name="dress" type="radio" value="4" id="dress4"/>
+                  <label for="dress4"></label>
+                  <input name="dress" type="radio" value="5" id="dress5"/>
+                  <label for="dress5"></label>
+                </div>
+                <div>
+                  <h6>Post Game?</h6>
+                  <input name="latenight" type="checkbox" id="latenight">
+                  <label for="latenight"></label>
+                </div>
+                <input class="btn waves-effect waves-light" type="submit" value="Submit">
+              </form>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-  <div class="row">
-    <div class="col s12">
-      <h5>
-        <a href="/venues/<%=venue._id%>/places">Back To <%= venue.name %> List</a>
-      </h5>
+    <div class="row">
+      <div class="col s12">
+        <h5>
+          <a href="/venues/<%=venue._id%>/places">Back To <%= venue.name %> List</a>
+        </h5>
+      </div>
     </div>
   </div>
 </body>
