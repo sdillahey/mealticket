@@ -33,8 +33,12 @@ function show(req, res, next) {
   // console.log('options=============================', options)
 
   request(options, function (err, response, body) {
-    // console.log("Zom controller body", body);
-    let restData = res.json(body);
+    console.log("Zom controller body", body);
+    let data = JSON.parse(body);
+    let restData = data.restaurants;
+    // console.log(restData.restaurant.name, typeof data);
+    // console.log("DATATATATATATTA", typeof data);
+    res.send(restData);
   });
 }
 
