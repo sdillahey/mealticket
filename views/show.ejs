@@ -15,7 +15,7 @@
         <div class="card-content">
           <span class="card-title">Add Your Rating</span>
           <div class="burgerRating">
-            <form action="/rating" method="POST">
+            <form action="/venues/<%=venue._id%>/places/<%=restaurant._id%>/rating" method="POST">
               <div class="burgers">
                 <h6>Walkability</h6>
                 <input name="walk" type="radio" value="1" id="walk1"/>
@@ -68,6 +68,11 @@
                 <input name="dress" type="radio" value="5" id="dress5"/>
                 <label for="dress5"></label>
               </div>
+              <div>
+                <h6>Post Game?</h6>
+                <input name="latenight" type="checkbox" id="latenight">
+                <label for="latenight"></label>
+              </div>
               <input class="btn waves-effect waves-light" type="submit" value="Submit">
             </form>
           </div>
@@ -78,7 +83,7 @@
   <div class="row">
     <div class="col s12">
       <h5>
-        <a href="/<%=venue._id%>">Back To <%= venue.name %> List</a>
+        <a href="/venues/<%=venue._id%>/places">Back To <%= venue.name %> List</a>
       </h5>
     </div>
   </div>

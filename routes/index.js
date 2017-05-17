@@ -8,10 +8,12 @@ const venueController = require('../controllers/venueController');
 
 /* GET home page. */
 router.get('/', venueController.main);
+
 router.get('/auth/google', passport.authenticate(
   'google',
   { scope: ['profile', 'email']}
 ));
+
 router.get('/oauth2callback', passport.authenticate(
   'google',
   {
@@ -19,17 +21,19 @@ router.get('/oauth2callback', passport.authenticate(
     failureRedirect: '/'
   }
 ));
+
 router.get('/logout', function(req, res) {
   req.logout();
   res.redirect('/');
 });
-router.get('/venues', venueController.allVenues);
-router.get('/venues/:venue/edit', venueController.edit);
-router.put('/venues/:venue', venueController.update);
-router.delete('/venues/:venue', venueController.delete);
-router.get('/:venue', mealController.index);
-router.get('/:venue/:id', mealController.show);
-router.post('/:venue/:id', mealController.create);
+
+router.get('/venues', venueController.allVenues); // TODO - auth middleware
+router.get('/venues/:venue/edit', venueController.edit); // TODO - auth middleware
+router.put('/venues/:venue', venueController.update); // TODO - auth middleware
+router.delete('/venues/:venue', venueController.delete); // TODO - auth middleware
+router.get('/venues/:venue/places', mealController.index);
+router.get('/venues/:venue/places/:id', mealController.show);
+router.post('/venues/:venue/places/:id/rating', mealController.create);
 
 
 module.exports = router;
