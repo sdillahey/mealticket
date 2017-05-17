@@ -7,7 +7,7 @@
   <!-- Dropdown Structure -->
   <ul id="maindrop" class="dropdown-content">
     <% venues.forEach(function(venue){ %>
-    <li><a href="/<%=venue._id%>"><%= venue.name %></a></li>
+    <li><a href="/venues/<%=venue._id%>/places"><%= venue.name %></a></li>
     <li class="divider"></li>
     <%})%>
   </ul>
@@ -30,7 +30,7 @@
       </ul>
       <ul class="side-nav" id="mobile">
         <% venues.forEach(function(venue){ %>
-        <li><a href="/<%=venue._id%>"><%= venue.name %></a></li>
+        <li><a href="/venues/<%=venue._id%>/places"><%= venue.name %></a></li>
         <% }) %>
       </ul>
     </div>
