@@ -12,9 +12,11 @@ function index(req, res, next){
 }
 
 function show(req, res, next){
-  Restaurant.findById(req.params.id, function(err, restaurant){
-    if (err) return res.redirect('/<%=req.params.venue%>')
-    res.render('show', { restaurant });
+  Venue.findById(req.params.venue, function(err, venue){
+    Restaurant.findById(req.params.id, function(err, restaurant){
+      if (err) return res.redirect('/<%=venue._id%>');
+      res.render('show', { restaurant: restaurant, user: req.user, venue: venue });
+    });
   });
 }
 
