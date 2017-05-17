@@ -1,38 +1,40 @@
 <%- include ./partials/_head %>
 <%- include ./partials/_nav  %>
-  <h1>Edit a Venue</h1>
-  <div class="row">
-    <form class="col s12" action="/venues/<%=venue._id%>?_method=PUT" method="POST">
-      <div class="row">
-        <div class="input-field col s6">
-          <input name="name" value="<%= venue.name %>" id="venue_name" type="text">
-          <label for="venue_name"></label>
+  <div class="container">
+    <h1>Edit a Venue</h1>
+    <div class="row">
+      <form class="col s12" action="/venues/<%=venue._id%>?_method=PUT" method="POST">
+        <div class="row">
+          <div class="input-field col s6">
+            <input name="name" value="<%= venue.name %>" id="venue_name" type="text">
+            <label for="venue_name"></label>
+          </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <input name="address" value="<%= venue.address %>" id="address" type="text">
-          <label for="address"></label>
+        <div class="row">
+          <div class="input-field col s12">
+            <input name="address" value="<%= venue.address %>" id="address" type="text">
+            <label for="address"></label>
+          </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s6">
-          <input name="latitude" value="<%= venue.latitude %>" id="latitude" type="text">
-          <label for="latitude"></label>
+        <div class="row">
+          <div class="input-field col s6">
+            <input name="latitude" value="<%= venue.latitude %>" id="latitude" type="text">
+            <label for="latitude"></label>
+          </div>
+          <div class="input-field col s6">
+            <input name="longitude" value="<%= venue.longitude %>" id="longitude" type="text">
+            <label for="longitude"></label>
+          </div>
         </div>
-        <div class="input-field col s6">
-          <input name="longitude" value="<%= venue.longitude %>" id="longitude" type="text">
-          <label for="longitude"></label>
+        <div class="row">
+          <div class="input-field col s12">
+            <input name="url" value="<%=venue.url%>" id="url" type="text">
+            <label for="url"></label>
+          </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <input name="url" value="<%=venue.url%>" id="url" type="text">
-          <label for="url"></label>
-        </div>
-      </div>
-      <input class="btn waves-effect waves-light" type="submit" value="Submit">
-    </form>
+        <input class="btn waves-effect waves-light" type="submit" value="Submit">
+      </form>
+    </div>
   </div>
 </body>
 </html>
