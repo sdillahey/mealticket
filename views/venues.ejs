@@ -1,24 +1,26 @@
 <%- include ./partials/_head %>
 <%- include ./partials/_nav  %>
-  <h1>All Venues</h1>
-  <table class="striped responsive-table">
-  <% venues.forEach(function(venue){ %>
-    <tr>
-      <td><%= venue.name %></td>
-      <td><%= venue.address %></td>
-      <td><%= venue.url %></td>
-      <td>
-        <form action="/venues/<%= venue._id%>/edit" method="GET">
-          <button class="waves-effect waves-light btn">Edit</button>
-        </form>
-      </td>
-      <td>
-        <form action="/venues/<%= venue._id%>?_method=DELETE" method="POST">
-          <button class="waves-effect waves-light btn">Delete</button>
-        </form>
-      </td>
-    </tr>
-   <% }) %>
-  </table>
+  <div class="container">
+    <h1>All Venues</h1>
+    <table class="striped responsive-table">
+    <% venues.forEach(function(venue){ %>
+      <tr>
+        <td><%= venue.name %></td>
+        <td><%= venue.address %></td>
+        <td><%= venue.url %></td>
+        <td>
+          <form action="/venues/<%= venue._id%>/edit" method="GET">
+            <button class="waves-effect waves-light btn">Edit</button>
+          </form>
+        </td>
+        <td>
+          <form action="/venues/<%= venue._id%>?_method=DELETE" method="POST">
+            <button class="waves-effect waves-light btn">Delete</button>
+          </form>
+        </td>
+      </tr>
+     <% }) %>
+    </table>
+  </div>
 </body>
 </html>
