@@ -6,6 +6,9 @@ a {
   color: #00B7FF;
 }
 
+.container {
+  padding: 10px;
+}
 
 .card-title {
   margin-left: 10px;
