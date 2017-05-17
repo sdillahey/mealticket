@@ -17,7 +17,7 @@ function allVenues(req, res, next){
 function edit(req, res, next){
   Venue.findById(req.params.venue, function(err, venue){
     if (err) return res.redirect('venues');
-    res.render('edit', {venue});
+    res.render('edit', {venue: venue, user: req.user});
   });
 }
 
