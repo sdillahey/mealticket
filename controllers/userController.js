@@ -3,7 +3,7 @@ const passport = require('passport');
 function logout(req, res) {
   req.logout();
   res.redirect('/');
-};
+}
 
 function isAdmin(req, res, next) {
   if (req.user && req.user.admin) return next();
