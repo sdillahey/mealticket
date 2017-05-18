@@ -12,7 +12,7 @@ function index(req, res, next) {
     let long = venue.longitude;
     let lat = venue.latitude;
     let options = {
-      url: `https://developers.zomato.com/api/v2.1/search?entity_id=281&entity_type=city&count=5&lat=${lat}&lon=${long}&radius=805&sort=real_distance`,
+      url: `https://developers.zomato.com/api/v2.1/search?entity_id=281&entity_type=city&count=5&lat=${lat}&lon=${long}&radius=805&sort=rating`,
       headers: {
         'user-key': key
       }
@@ -74,6 +74,7 @@ function createNewRestaurants(newApiRestaurants) {
     var newRest = new Restaurant;
     newRest.name = rest.restaurant.name;
     newRest.zomid = rest.restaurant.id;
+    newRest.cuisines = rest.restaurant.cuisines;
     newRest.url = rest.restaurant.url;
     newRest.img_url = rest.restaurant.featured_image;
     newRest.longitude = rest.restaurant.location.longitude;
