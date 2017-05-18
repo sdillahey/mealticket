@@ -5,47 +5,74 @@ const request = require('request');
 const rootURL = 'https://developers.zomato.com/api/v2.1/search?entity_id=281&entity_type=city&count=10&lat=';
 const key = process.env.XZomatoAPIKey;
 
-function create(req, res, next){
-  // let newRestaurant = {};
-  // newRestaurant = (req.body.walk);
-//   newRating.price = parseInt(req.body.price);
-//   newRating.speed = parseInt(req.body.speed);
-//   newRating.dress = parseInt(req.body.dress);
-//   newRating.latenight = (req.body.latenight === "on") ? true : false;
-//   Restaurant.findById(req.params.id, function(err, restaurant){
-//       if (err) return res.redirect(`/venues/${req.params.venue}/places`);
-//       restaurant.rating.push(newRating);
-//       restaurant.save(function(err){
-//         if (err) return res.render('show', {restaurant})
-//         res.redirect(`/venues/${req.params.venue}/places/${req.params.id}`);
-//       });
-//   });
-}
 
 function show(req, res, next) {
+  // let long = venue.longitude;
+  // let lat = venue.latitude;
   let options = {
     url: `https://developers.zomato.com/api/v2.1/search?entity_id=281&entity_type=city&count=5&lat=34.05&lon=-118.25&radius=805&sort=real_distance`,
+    // url: `https://developers.zomato.com/api/v2.1/search?entity_id=281&entity_type=city&count=5&lat=34.05&lon=-118.25&radius=805&sort=real_distance`,
     headers: {
       'user-key': key
     }
   };
-
-  // console.log('options=============================', options)
-
+  let existingDbRests;
   request(options, function (err, response, body) {
-    console.log("Zom controller body", body);
-    let data = JSON.parse(body);
-    let restData = data.restaurants;
-    // console.log(restData.restaurant.name, typeof data);
-    // console.log("DATATATATATATTA", typeof data);
-    res.send(restData);
+    let jdata = JSON.parse(body);
+    let data = jdata.restaurants;
+    let newApiRestaurants;
+    getExistingRestaurants(data).then(function(dbRests) {
+      existingDbRests = dbRests;
+      newApiRestaurants = data.filter(function(apiRest) {
+        return !dbRests.some(function(dbRest) {
+          return dbRest.zomid == apiRest.restaurant.id;
+        });
+      });
+      return createNewRestaurants(newApiRestaurants);
+    }).then(function(newRests) {
+      var searchData = (typeof newRests === 'object') ? existingDbRests.concat(newRests) : existingDbRests;
+      res.send(searchData);
+    });
+  });
+}
+
+function createNewRestaurants(newApiRestaurants) {
+  let promises = [];
+  newApiRestaurants.forEach(function(rest){
+    var newRest = new zomRest;
+    newRest.name = rest.restaurant.name;
+    newRest.zomid = rest.restaurant.id;
+    newRest.url = rest.restaurant.url;
+    newRest.img_url = rest.restaurant.featured_image;
+    newRest.longitude = rest.restaurant.location.longitude;
+    newRest.latitude = rest.restaurant.location.latitude;
+    newRest.address = rest.restaurant.location.address;
+    newRest.avecost = rest.restaurant.average_cost_for_two;
+    newRest.zomrate = rest.restaurant.user_rating.aggregate_rating;
+    promises.push(newRest.save());
+  });
+  return Promise.all(promises);
+}
+
+function getExistingRestaurants(apiRests) {
+  var promises = [];
+  return new Promise(function(resolve, reject) {
+    apiRests.forEach(function(apiRest) {
+      promises.push(zomRest.findOne({zomid: apiRest.restaurant.id}).exec());
+    });
+    Promise.all(promises).then(function(arrayOfDocs) {
+      resolve(arrayOfDocs.filter(function(doc) {
+        return doc !== null;
+      }));
+    });
   });
 }
 
 const zomController = {
-  create: create,
   show: show
 }
 
 module.exports = zomController;
+
+
 
