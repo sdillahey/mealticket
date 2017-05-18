@@ -31,6 +31,11 @@ a {
 
 #local-table {
   background-color: rgb(242, 242, 242);
+  border-style: solid;
+  border-top: solid medium red;
+  border-bottom: none;
+  border-left: none;
+  border-right: none;
   padding: 20px;
 }
 
@@ -47,5 +52,9 @@ a {
 #hero {
   width: 100%;
   height: 50vh;
+}
+
+#show {
+  padding: 10px;
 }
 

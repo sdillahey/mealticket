@@ -14,7 +14,7 @@ var restaurantSchema = new Schema({
   zomid: Number,
   rating: [ratingSchema],
   url: String,
-  img_url: {type: String, default: 'http://i.imgur.com/enUc2e8.jpg'},
+  img_url: {type: String, default: 'http://imgur.com/21TXXUU'},
   longitude: Number,
   latitude: Number,
   address: String,
