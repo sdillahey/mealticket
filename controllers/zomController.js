@@ -7,10 +7,10 @@ const key = process.env.XZomatoAPIKey;
 
 
 function show(req, res, next) {
-  let long = venue.longitude;
-  let lat = venue.latitude;
+  let long = zomVenue.longitude;
+  let lat = zomVenue.latitude;
   let options = {
-    url: `https://developers.zomato.com/api/v2.1/search?entity_id=281&entity_type=city&count=5&lat=34.05&lon=-118.25&radius=805&sort=real_distance`,
+    url: `https://developers.zomato.com/api/v2.1/search?entity_id=280&entity_type=city&count=5&lat=34.05&lon=-118.25&radius=805&sort=rating`,
     // url: `https://developers.zomato.com/api/v2.1/search?entity_id=281&entity_type=city&count=5&lat=34.05&lon=-118.25&radius=805&sort=real_distance`,
     headers: {
       'user-key': key
@@ -43,6 +43,7 @@ function createNewRestaurants(newApiRestaurants) {
     newRest.name = rest.restaurant.name;
     newRest.zomid = rest.restaurant.id;
     newRest.url = rest.restaurant.url;
+    newRest.cuisines = rest.restaurant.cuisines;
     newRest.img_url = rest.restaurant.featured_image;
     newRest.longitude = rest.restaurant.location.longitude;
     newRest.latitude = rest.restaurant.location.latitude;

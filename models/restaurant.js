@@ -19,7 +19,7 @@ var restaurantSchema = new Schema({
   latitude: Number,
   address: String,
   avecost: Number,
-  cuisine: String,
+  cuisines: String,
   zomrate: Number
 });
 
