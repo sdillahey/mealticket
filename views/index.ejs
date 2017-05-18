@@ -28,17 +28,28 @@
       </div>
       <script>
         function initMap() {
-          var uluru = {lat: <%=venue.latitude%>, lng: <%= venue.longitude%>};
+          var eventspace = {lat: <%=venue.latitude%>, lng: <%=venue.longitude%>};
           var map = new google.maps.Map(document.getElementById('map'), {
             zoom: 15,
-            center: uluru
+            center: eventspace
           });
           var venueMarker = new google.maps.Marker({
-            position: uluru,
-            map: map,
-            icon: 'http://i.imgur.com/t46eNRq.png'
+            position: eventspace,
+            map: map
           });
-        }
+
+          var marker;
+          var restaurants = <%- JSON.stringify(restaurants) %>;
+          restaurants.forEach(function(restaurant){
+              marker = new google.maps.Marker({
+              position: new google.maps.LatLng(restaurant['latitude'], restaurant['longitude']),
+              map: map,
+              icon: 'http://i.imgur.com/SoQvvYJ.png'
+              });
+
+            }), (marker)
+          }
+
       </script>
       <script async defer
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDC_zK-S4IyccNDfWF0Sd_Sh-SMjAY7OWs&callback=initMap">
