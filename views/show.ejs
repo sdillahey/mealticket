@@ -5,13 +5,20 @@
       <div class="col s12 m8">
         <div class="card">
           <h1><%= restaurant.name %></h1>
-          <div class="chip">Average Cost: $<%=restaurant.avecost%></div>
+          <h5><%=restaurant.address%></h5>
+          <a href="<%=restaurant.url%>">Check Out <%=restaurant.name%></a>
+          <hr>
+          <img class="responsive-img" src="<%=restaurant.img_url%>" alt="">
+          <div class="chip"><%= restaurant.zomrate %>/5</div>
           <div class="chip"><%= restaurant.cuisine%></div>
+          <div class="chip">Average Cost: $<%=restaurant.avecost%></div>
+          <div class="card-content">
             <p>Walkability: <%= restaurant.aveRate.walk%></p>
             <p>Price: <%= restaurant.aveRate.price%></p>
             <p>Speed: <%= restaurant.aveRate.speed%></p>
             <p>Dress: <%= restaurant.aveRate.dress%></p>
             <p>Post-Gameable: <%= restaurant.aveRate.latenightPct%>%</p>
+          </div>
         </div>
       </div>
     </div>
@@ -19,11 +26,14 @@
       <div class="col s12 m4 offset-m1">
         <div class="card">
           <div class="card-content">
-            <span class="card-title">Add Your Rating</span>
+            <div class="center-align">
+              <img src="http://i.imgur.com/t46eNRq.png" alt="Meal Ticket Logo">
+            </div>
+            <span class="card-title center-align">Add Your Meal Ticket Rating</span>
             <div class="burgerRating">
               <form action="/venues/<%=venue._id%>/places/<%=restaurant._id%>/rating" method="POST">
                 <div class="burgers">
-                  <h6>Walkability</h6>
+                  <h6>Walk this Way</h6>
                   <input name="walk" type="radio" value="1" id="walk1"/>
                   <label for="walk1"></label>
                   <input name="walk" type="radio" value="2" id="walk2"/>
@@ -36,7 +46,7 @@
                   <label for="walk5"></label>
                 </div>
                 <div class="burgers">
-                  <h6>$$$</h6>
+                  <h6>Chedda</h6>
                   <input name="price" type="radio" value="1" id="price1"/>
                   <label for="price1"></label>
                   <input name="price" type="radio" value="2" id="price2"/>
@@ -49,7 +59,7 @@
                   <label for="price5"></label>
                 </div>
                 <div class="burgers">
-                  <h6>Speed</h6>
+                  <h6>In N Out</h6>
                   <input name="speed" type="radio" value="1" id="speed1"/>
                   <label for="speed1"></label>
                   <input name="speed" type="radio" value="2" id="speed2"/>
