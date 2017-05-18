@@ -14,6 +14,7 @@ require('./config/database');
 require('./config/passport');
 
 const index = require('./routes/index');
+const api = require('./routes/api');
 
 const app = express();
 
@@ -37,6 +38,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(methodOverride('_method'));
 
+app.use('/api', api);
 app.use('/', index);
 
 // catch 404 and forward to error handler

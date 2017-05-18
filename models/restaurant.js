@@ -51,4 +51,8 @@ restaurantSchema.virtual('aveRate').get(function() {
   return aveRating;
 });
 
+restaurantSchema.set('toJSON', {
+  virtuals: true
+});
+
 module.exports = mongoose.model('Restaurant', restaurantSchema);
