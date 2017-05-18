@@ -5,7 +5,6 @@ const request = require('request');
 
 const mealController = require('../controllers/mealController');
 const venueController = require('../controllers/venueController');
-const zomController = require('../controllers/zomController');
 const userController = require('../controllers/userController');
 
 /* GET home page. */
