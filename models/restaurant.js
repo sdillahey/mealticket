@@ -14,12 +14,12 @@ var restaurantSchema = new Schema({
   zomid: Number,
   rating: [ratingSchema],
   url: String,
-  img_url: String,
+  img_url: {type: String, default: 'http://i.imgur.com/enUc2e8.jpg'},
   longitude: Number,
   latitude: Number,
   address: String,
   avecost: Number,
-  cuisines: String,
+  cuisine: {type: String, default: 'food'},
   zomrate: Number
 });
 

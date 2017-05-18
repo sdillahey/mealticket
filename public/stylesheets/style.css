@@ -45,8 +45,7 @@ a {
 }
 
 #hero {
-  display: flex;
-  width: 470px;
-  height: 380px;
+  width: 100%;
+  height: 50vh;
 }
 
