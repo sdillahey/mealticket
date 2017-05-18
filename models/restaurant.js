@@ -23,4 +23,32 @@ var restaurantSchema = new Schema({
   zomrate: Number
 });
 
+restaurantSchema.virtual('aveRate').get(function() {
+  let ave = {
+    walk: 0,
+    price: 0,
+    speed: 0,
+    dress: 0,
+    latenightPct: 0
+  };
+  if (!this.rating.length) return ave;
+  let aveRating = this.rating.reduce(function(acc, cur){
+    return {
+      walk: acc.walk + cur.walk,
+      price: acc.price + cur.price,
+      speed: acc.speed + cur.speed,
+      dress: acc.dress + cur.dress,
+      latenightPct: acc.latenightPct + (cur.latenight ? 1 : 0)
+    }
+  }, ave);
+  for (var key in aveRating) {
+    if (key !== "latenightPct") {
+      aveRating[key] = Math.round(aveRating[key]/this.rating.length);
+    } else {
+      aveRating[key] = ((aveRating[key]/this.rating.length)*100).toFixed();
+    }
+  }
+  return aveRating;
+});
+
 module.exports = mongoose.model('Restaurant', restaurantSchema);
