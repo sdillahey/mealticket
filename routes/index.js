@@ -5,7 +5,6 @@ const request = require('request');
 
 const mealController = require('../controllers/mealController');
 const venueController = require('../controllers/venueController');
-const zomController = require('../controllers/zomController');
 const userController = require('../controllers/userController');
 
 /* GET home page. */
@@ -14,8 +13,6 @@ router.get('/', venueController.main);
 router.get('/auth/google', userController.scope);
 router.get('/oauth2callback', userController.auth);
 router.get('/logout', userController.logout);
-
-router.get('/test', zomController.show);
 
 router.get('/venues', userController.isAdmin, venueController.allVenues);
 router.get('/venues/:venue/edit', userController.isAdmin, venueController.edit);
