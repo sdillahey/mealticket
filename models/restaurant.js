@@ -11,6 +11,7 @@ var ratingSchema = new Schema({
 
 var restaurantSchema = new Schema({
   name: String,
+  zomid: Number,
   rating: [ratingSchema],
   url: String,
   img_url: String,
