@@ -2,6 +2,10 @@ body {
   font-family: 'Quicksand', Helvetica, Arial, sans-serif;
 }
 
+footer {
+  margin-top: 50px;
+}
+
 a {
   color: #00B7FF;
 }
@@ -15,8 +19,6 @@ a {
 }
 
 .card-image {
-  width: 300px;
-  height: auto;
   background-color: rgb(200, 200, 200);
   background-size: auto;
 }
@@ -42,7 +44,9 @@ a {
   width: 500px;
 }
 
-#topbanner {
-  margin: 10px 0;
+#hero {
+  display: flex;
+  width: 470px;
+  height: 380px;
 }
 
