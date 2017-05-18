@@ -32,7 +32,6 @@ function index(req, res, next) {
         return createNewRestaurants(newApiRestaurants);
       }).then(function(newRests) {
         var searchData = (typeof newRests === 'object') ? existingDbRests.concat(newRests) : existingDbRests;
-        console.log(searchData);
         res.render('index', {restaurants: searchData, user: req.user, venue: venue});
       });
     });
@@ -90,7 +89,6 @@ function createNewRestaurants(newApiRestaurants) {
 function getExistingRestaurants(apiRests) {
   var promises = [];
   return new Promise(function(resolve, reject) {
-    console.log('STACY', apiRests);
     apiRests.forEach(function(apiRest) {
       promises.push(Restaurant.findOne({zomid: apiRest.restaurant.id}).exec());
     });
