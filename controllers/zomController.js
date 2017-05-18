@@ -7,8 +7,8 @@ const key = process.env.XZomatoAPIKey;
 
 
 function show(req, res, next) {
-  // let long = venue.longitude;
-  // let lat = venue.latitude;
+  let long = venue.longitude;
+  let lat = venue.latitude;
   let options = {
     url: `https://developers.zomato.com/api/v2.1/search?entity_id=281&entity_type=city&count=5&lat=34.05&lon=-118.25&radius=805&sort=real_distance`,
     // url: `https://developers.zomato.com/api/v2.1/search?entity_id=281&entity_type=city&count=5&lat=34.05&lon=-118.25&radius=805&sort=real_distance`,
