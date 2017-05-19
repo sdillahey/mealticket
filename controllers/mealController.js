@@ -76,7 +76,7 @@ function createNewRestaurants(newApiRestaurants) {
     newRest.zomid = rest.restaurant.id;
     newRest.cuisine = rest.restaurant.cuisines;
     newRest.url = rest.restaurant.url;
-    newRest.img_url = rest.restaurant.featured_image === '' ? 'http://i.imgur.com/jtrNjlA.png?1' : rest.restaurant.featured_image;
+    newRest.img_url = rest.restaurant.featured_image === '' ? 'https://i.imgur.com/jtrNjlA.png?1' : rest.restaurant.featured_image;
     newRest.longitude = rest.restaurant.location.longitude;
     newRest.latitude = rest.restaurant.location.latitude;
     newRest.address = rest.restaurant.location.address;
