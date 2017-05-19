@@ -14,8 +14,6 @@ router.get('/auth/google', userController.scope);
 router.get('/oauth2callback', userController.auth);
 router.get('/logout', userController.logout);
 
-router.get('/test', zomController.show);
-
 router.get('/venues', userController.isAdmin, venueController.allVenues);
 router.get('/venues/:venue/edit', userController.isAdmin, venueController.edit);
 router.put('/venues/:venue', userController.isAdmin, venueController.update);
